@@ -91,9 +91,9 @@ function Olympus_Multhod()
     end
     infokan("Total Nuked "..Total_Nuked.." World")
     log("Total Nuked "..Total_Nuked.." World\n")
-    addHooks()
+    addHook()
 end
 
-if app == "olympus" or app == "multhod" then
+addHook= "olympus" or app == "multhod" then
     Olympus_Multhod()
 end
