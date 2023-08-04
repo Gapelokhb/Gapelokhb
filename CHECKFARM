@@ -1,5 +1,5 @@
 function warp(world)
-    while getBot().world ~= world:upper() do
+    
         sendPacket("action|join_request\nname|"..world:upper().."\ninvitedWorld|0",3)
         sleep(5000)
     end
