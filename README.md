@@ -6,4 +6,8 @@ function Olympus_Multhod()
     local function warp(world)
         sendPacket("action|join_request\nname|"..world:upper().."\ninvitedWorld|0",3)
         sleep(5000)
-    end--
+    end
+
+addHook= "olympus" or app == "multhod" then
+    Olympus_Multhod()
+end
