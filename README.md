@@ -6,8 +6,8 @@ local function warp(world)
     sleep(MADS.DelayWarp)
 end--
 local function log(text) 
-    file = io.open("WORLD SCAN.lua", "a")
-    file:write(lua.."\n")
+    file = io.open("WORLD SCAN.dat", "a")
+    file:write(dat.."\n")
     file:close()
 end
 local function scanFossil()
