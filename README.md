@@ -5,7 +5,11 @@ local function warp(world)
     sendPacket("action|join_request\nname|"..world:upper().."\ninvitedWorld|0",3)
     sleep(MADS.DelayWarp)
 end--
-
+local function log(text) 
+    file = io.open("WORLD SCAN.lua", "a")
+    file:write(lua.."\n")
+    file:close()
+end
 local function scanFossil()
     local count = 0
     for index,fosil in pairs(getTiles()) do
@@ -70,11 +74,11 @@ while true do
             sleep(math.ceil(MADS.DelayAfk / 3))
             log(MADS.FarmList[i]:upper().." SAFE | ".."[ "..treek.." Ready & "..treeks.." Not Ready ] | "..posil.." Fossil")
             infokan(MADS.FarmList[i]:upper().." SAFE | ".."[ "..treek.." Ready & "..treeks.." Not Ready ] | "..posil.." Fossil")
-            sleep(300)
+            sleep(100)
         else
             log(MADS.FarmList[i]:upper().." | NUKED")
             infokan(MADS.FarmList[i]:upper().." | NUKED")
-            sleep(500)
+            sleep(100)
             nuked = false
             Total_Nuked = Total_Nuked + 1
         end
