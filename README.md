@@ -4,8 +4,7 @@ nuked = false
 local function warp(world)
     sendPacket("action|join_request\nname|"..world:upper().."\ninvitedWorld|0",3)
     sleep(MADS.DelayWarp)
-eend-
-
+end
 local function scanFossil()
     local count = 0
     for index,fosil in pairs(getTiles()) do
