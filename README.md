@@ -4,6 +4,11 @@ nuked = false
 local function warp(world)
     sendPacket("action|join_request\nname|"..world:upper().."\ninvitedWorld|0",3)
     sleep(MADS.DelayWarp)
+end--
+local function log(text) 
+    file = io.open("WORLD STATUS.txt", "a")
+    file:write(text.."\n")
+    file:close()
 end
 local function scanFossil()
     local count = 0
@@ -69,11 +74,11 @@ while true do
             sleep(math.ceil(MADS.DelayAfk / 3))
             log(MADS.FarmList[i]:upper().." SAFE | ".."[ "..treek.." Ready & "..treeks.." Not Ready ] | "..posil.." Fossil")
             infokan(MADS.FarmList[i]:upper().." SAFE | ".."[ "..treek.." Ready & "..treeks.." Not Ready ] | "..posil.." Fossil")
-            sleep(100)
+            sleep(300)
         else
             log(MADS.FarmList[i]:upper().." | NUKED")
             infokan(MADS.FarmList[i]:upper().." | NUKED")
-            sleep(100)
+            sleep(500)
             nuked = false
             Total_Nuked = Total_Nuked + 1
         end
