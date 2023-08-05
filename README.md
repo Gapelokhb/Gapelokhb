@@ -6,8 +6,8 @@ local function warp(world)
     sleep(MADS.DelayWarp)
 end--
 local function log(text) 
-    file = io.open("WORLD SCAN.dat", "a")
-    file:write(dat.."\n")
+    file = io.open("WORLD STATUS.txt", "a")
+    file:write(text.."\n")
     file:close()
 end
 local function scanFossil()
@@ -74,11 +74,11 @@ while true do
             sleep(math.ceil(MADS.DelayAfk / 3))
             log(MADS.FarmList[i]:upper().." SAFE | ".."[ "..treek.." Ready & "..treeks.." Not Ready ] | "..posil.." Fossil")
             infokan(MADS.FarmList[i]:upper().." SAFE | ".."[ "..treek.." Ready & "..treeks.." Not Ready ] | "..posil.." Fossil")
-            sleep(100)
+            sleep(500)
         else
             log(MADS.FarmList[i]:upper().." | NUKED")
             infokan(MADS.FarmList[i]:upper().." | NUKED")
-            sleep(100)
+            sleep(500)
             nuked = false
             Total_Nuked = Total_Nuked + 1
         end
